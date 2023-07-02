@@ -42,7 +42,7 @@ msgTemplate = Embed(
 @user_context_menu(name="Send virtual hug")
 async def test(ctx):
 	msgTemplate.title = "Hugs!"
-	msgTemplate.description = f"Sending virtual hug to {ctx.target.user.username}!"
+	msgTemplate.description = f"Sending virtual hug to <@{ctx.target.user.id}>!"
 
 	await ctx.send(embeds = msgTemplate)
 
