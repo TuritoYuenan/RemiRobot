@@ -1,12 +1,10 @@
-#!/bin/python
-
 import math, random
 from dotenv import dotenv_values
 from interactions import (
-	Client,
-	Embed, EmbedAuthor,	EmbedFooter,
+	Client, Embed,
+	EmbedAuthor, EmbedFooter,
 	OptionType, Timestamp,
-	listen, message_context_menu,
+	listen, user_context_menu,
 	slash_command, slash_option
 )
 
@@ -18,14 +16,13 @@ from interactions import (
 
 # __birthday__ = datetime(2018, 9, 22, 21, 45)
 # clock = lambda u: datetime.now().strftime(u)
-# generateRandomNumber = lambda l, h: str(random.randint(int(l), int(h)))
 
 secrets = dotenv_values('secrets.env')
 
 TOKEN = secrets['TOKEN_DISCORD']
 SERVER = secrets['GUILD_TTS']
 
-robot = Client(token = TOKEN, debug_scope = SERVER, activity="Touhou 13")
+robot = Client(token = TOKEN, debug_scope = SERVER)
 """Remilia's core, a Discord bot client"""
 
 msgTemplate = Embed(
@@ -42,10 +39,10 @@ msgTemplate = Embed(
 ######################################
 
 
-@message_context_menu(name="Send virtual hug")
+@user_context_menu(name="Send virtual hug")
 async def test(ctx):
-	msgTemplate.title = f"Sending virtual hug to {ctx.target.user.username}!"
-	msgTemplate.description = ""
+	msgTemplate.title = "Hugs!"
+	msgTemplate.description = f"Sending virtual hug to {ctx.target.user.username}!"
 
 	await ctx.send(embeds = msgTemplate)
 
@@ -120,7 +117,7 @@ async def calculate(ctx, type: str, num1: float, num2: float):
 
 
 @slash_command(name='trigonometry', description='Do trigonometry')
-@slash_option(name='func', description='Function', opt_type=OptionType.STRING, required=True,
+@slash_option(name='trig', description='Trig function', opt_type=OptionType.STRING, required=True,
 	choices=[
 		{'value':'sin', 'name':'Sine'},
 		{'value':'cos', 'name':'Cosine'},
@@ -128,14 +125,14 @@ async def calculate(ctx, type: str, num1: float, num2: float):
 	]
 )
 @slash_option(name='rad', description='Radian', opt_type=OptionType.NUMBER)
-async def trigonometry(ctx, func: str, rad: float = 1.0):
-	match func:
+async def trigonometry(ctx, trig: str, rad: float = 1.0):
+	match trig:
 		case 'sin': result = math.sin(rad)
 		case 'cos': result = math.cos(rad)
 		case 'tan': result = math.tan(rad)
 
 	msgTemplate.title = f'Your result is {result}'
-	msgTemplate.description = f'Calculate: {func}({rad})'
+	msgTemplate.description = f'Calculate: {trig}({rad})'
 
 	await ctx.send(embeds = msgTemplate)
 
