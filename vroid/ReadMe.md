@@ -17,3 +17,4 @@ Textures for Remilia's VRoid model. VRoid Hub character: <https://hub.vroid.com/
 
 - [Top](./UndiesTop.svg)
 - [Bottom](./UndiesBottom.svg)
+- [Socks](./Socks.svg)
