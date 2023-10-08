@@ -10,12 +10,12 @@ const srvID: string = Deno.env.get('SERVER') || '';
 class RemiBot extends Client {
 	@event('ready')
 	bootstrap() {
-		console.log('RemiBot online!');
-		commands.forEach((command) => {
+		console.log('RemiBot is online!');
+		for (const command of commands) {
 			this.interactions.commands.create(command, srvID)
-				.then((cmd) => console.log(`Created Slash Command ${cmd.name}!`))
-				.catch((cmd) => console.log(`Failed to create ${cmd.name} command!`));
-		});
+				.then((cmd) => console.log(`🟩 Command /${cmd.name} ONLINE`))
+				.catch((cmd) => console.log(`🔴 Command /${cmd.name} FÄLLT AUS`));
+		}
 	}
 
 	@slash('ping')
