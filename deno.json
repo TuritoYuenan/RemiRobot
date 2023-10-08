@@ -10,10 +10,16 @@
 		"useTabs": true
 	},
 	"imports": {
-		"dotenv": "https://deno.land/std@0.200.0/dotenv/load.ts",
-		"harmony": "https://deno.land/x/harmony@v2.9.0/mod.ts"
+		"assert": "https://deno.land/std@0.203.0/assert/mod.ts",
+		"dotenv": "https://deno.land/std@0.203.0/dotenv/load.ts",
+		"harmony": "https://deno.land/x/harmony/mod.ts"
 	},
 	"tasks": {
 		"dev": "deno run -A ./typescript/mod.ts"
+	},
+	"test": {
+		"include": [
+			"typescript/tests/*"
+		]
 	}
 }
