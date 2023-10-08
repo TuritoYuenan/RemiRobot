@@ -1,12 +1,15 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "Bootstrap RemiBot Deno Ver.",
-            "type": "shell",
-            "command": "cd ./typescript; deno run -A ./mod.ts"
-        }
-    ]
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "deno",
+			"command": "task",
+			"args": ["dev"],
+			"problemMatcher": ["$deno"],
+			"label": "deno task: dev",
+			"detail": "deno run -A ./typescript/mod.ts"
+		}
+	]
 }

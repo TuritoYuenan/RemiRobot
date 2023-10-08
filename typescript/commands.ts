@@ -1,10 +1,10 @@
-import { SlashCommandPartial } from "./deps.ts";
+import { SlashCommandPartial } from 'harmony';
 
 export const commands: SlashCommandPartial[] = [
-    {
-        name: "ping",
-		description: "Return Article 18 in the Universal Declaration of Human Rights",
-    },
+	{
+		name: 'ping',
+		description: 'Return Article 18 in the UDHR',
+	},
 	{
 		name: "spell",
 		description: "Spell out the inputed word",

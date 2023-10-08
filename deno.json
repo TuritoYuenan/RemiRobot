@@ -1,0 +1,16 @@
+{
+	"imports": {
+		"harmony": "https://deno.land/x/harmony@v2.9.0/mod.ts",
+		"dotenv": "https://deno.land/std@0.200.0/dotenv/load.ts"
+	},
+	"fmt": {
+		"semiColons": true,
+		"singleQuote": true,
+		"useTabs": true,
+		"indentWidth": 4,
+		"lineWidth": 100
+	},
+	"tasks": {
+		"dev": "deno run -A ./typescript/mod.ts"
+	}
+}
