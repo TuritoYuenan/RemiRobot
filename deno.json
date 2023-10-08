@@ -1,14 +1,17 @@
 {
-	"imports": {
-		"harmony": "https://deno.land/x/harmony@v2.9.0/mod.ts",
-		"dotenv": "https://deno.land/std@0.200.0/dotenv/load.ts"
-	},
 	"fmt": {
+		"include": [
+			"typescript"
+		],
+		"indentWidth": 4,
+		"lineWidth": 100,
 		"semiColons": true,
 		"singleQuote": true,
-		"useTabs": true,
-		"indentWidth": 4,
-		"lineWidth": 100
+		"useTabs": true
+	},
+	"imports": {
+		"dotenv": "https://deno.land/std@0.200.0/dotenv/load.ts",
+		"harmony": "https://deno.land/x/harmony@v2.9.0/mod.ts"
 	},
 	"tasks": {
 		"dev": "deno run -A ./typescript/mod.ts"

@@ -6,8 +6,12 @@
 		{
 			"type": "deno",
 			"command": "task",
-			"args": ["dev"],
-			"problemMatcher": ["$deno"],
+			"args": [
+				"dev"
+			],
+			"problemMatcher": [
+				"$deno"
+			],
 			"label": "deno task: dev",
 			"detail": "deno run -A ./typescript/mod.ts"
 		}

@@ -1,7 +1,8 @@
-import "dotenv";
 import { Client, EmbedPayload, event, Intents, Interaction, slash } from 'harmony';
-import { commands, Operators } from './commands.ts';
+import { arithmetic } from './maths.ts';
+import { commands } from './commands.ts';
 import { strings } from './strings.ts';
+import 'dotenv';
 
 const token: string = Deno.env.get('TOKEN') || '';
 const srvID: string = Deno.env.get('SERVER') || '';
@@ -45,22 +46,8 @@ class RemiBot extends Client {
 			const num1 = i.data.options.find((e) => e.name == 'num1')?.value;
 			const num2 = i.data.options.find((e) => e.name == 'num2')?.value;
 			const oprd = i.data.options.find((e) => e.name == 'operator')?.value;
-			let result = 0;
 
-			switch (oprd) {
-				case Operators.Plus:
-					result = num1 + num2;
-					break;
-				case Operators.Minus:
-					result = num1 - num2;
-					break;
-				case Operators.Multiply:
-					result = num1 * num2;
-					break;
-				case Operators.Divide:
-					result = num1 / num2;
-					break;
-			}
+			const result = arithmetic(num1, num2, oprd)
 
 			const response: EmbedPayload = {
 				title: `The result is ${result}`,
