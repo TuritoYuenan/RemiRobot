@@ -12,7 +12,7 @@
 	"imports": {
 		"assert": "https://deno.land/std@0.203.0/assert/mod.ts",
 		"dotenv": "https://deno.land/std@0.203.0/dotenv/load.ts",
-		"harmony": "https://deno.land/x/harmony/mod.ts"
+		"harmony": "https://deno.land/x/harmony@v2.9.0/mod.ts"
 	},
 	"tasks": {
 		"dev": "deno run -A ./typescript/mod.ts"

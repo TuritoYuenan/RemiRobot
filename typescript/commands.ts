@@ -1,5 +1,5 @@
 import { SlashCommandPartial } from 'harmony';
-import { Operators } from './maths.ts';
+import { Operators, TrigTypes } from './maths.ts';
 
 export const commands: SlashCommandPartial[] = [{
 	name: 'ping',
@@ -37,5 +37,24 @@ export const commands: SlashCommandPartial[] = [{
 			{ name: '(×) Multiply', value: Operators.Multiply },
 			{ name: '(÷) Divide', value: Operators.Divide },
 		],
+	}],
+}, {
+	name: 'trigonometry',
+	description: 'Do trigonometry calculation',
+	options: [{
+		name: 'type',
+		description: 'Trigonometry function',
+		type: 'STRING',
+		required: true,
+		choices: [
+			{ name: '[sin()] Sine', value: TrigTypes.Sine },
+			{ name: '[cos()] Cosine', value: TrigTypes.Cosine },
+			{ name: '[tan()] Tangent', value: TrigTypes.Tangent },
+		],
+	}, {
+		name: 'radian',
+		description: 'Input number (in radian)',
+		type: 'NUMBER',
+		required: true,
 	}],
 }];
