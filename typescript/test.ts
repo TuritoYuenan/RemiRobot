@@ -1,5 +1,5 @@
 import { assertEquals } from 'assert';
-import { Operators, arithmetic } from '../maths.ts';
+import { Operators, arithmetic } from './maths.ts';
 
 Deno.test("Calculating exam", () => {
 	assertEquals(arithmetic(3, 478, Operators.Plus), 481);
@@ -14,8 +14,4 @@ Deno.test("Division exam", () => {
 	assertEquals(arithmetic(2, 10, Operators.Divide), 0.2);
 	assertEquals(arithmetic(16, 3, Operators.Divide), 5.333333333333333);
 	assertEquals(arithmetic(5, 0, Operators.Divide), '[Indivisible by 0]');
-})
-
-Deno.test("Trigonometry exam", () => {
-	// assertEquals(trigonometry(TrigTypes.Sine, 1), 90);
 })
