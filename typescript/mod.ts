@@ -1,5 +1,13 @@
-import { Client, EmbedPayload, event, Intents, slash, SlashCommandInteraction } from 'harmony';
+import {
+	Client,
+	EmbedPayload,
+	event,
+	Intents,
+	slash,
+	SlashCommandInteraction,
+} from 'harmony';
 import { arithmetic, trigonometry } from './maths.ts';
+import { zenQuotes } from './apis.ts';
 import { commands } from './commands.ts';
 import { strings } from './strings.ts';
 import 'dotenv';
@@ -10,12 +18,12 @@ const srvID: string = Deno.env.get('SERVER') || '';
 class RemiBot extends Client {
 	@event('ready')
 	bootstrap() {
-		console.log('RemiBot is online!');
 		for (const command of commands) {
 			this.interactions.commands.create(command, srvID)
 				.then((cmd) => console.log(`🟩 Command /${cmd.name} ONLINE`))
-				.catch((cmd) => console.log(`🔴 Command /${cmd.name} FÄLLT AUS`));
+				.catch((cmd) => console.log(`🔴 Command /${cmd.name} FAILED`));
 		}
+		console.log(`RemiBot ONLINE: https://discord.com/channels/${srvID}`);
 	}
 
 	@slash('ping')
@@ -25,6 +33,7 @@ class RemiBot extends Client {
 			title: strings.article18.title,
 			description: strings.article18.text,
 			color: 0x009EDB,
+			type: 'article',
 		};
 
 		i.respond({ embeds: [response] });
@@ -37,6 +46,22 @@ class RemiBot extends Client {
 		const spelt = word.split('').toString();
 
 		i.respond({ content: spelt });
+	}
+
+	@slash('quote')
+	async quote(i: SlashCommandInteraction) {
+		const data = await fetch(zenQuotes);
+		const quote = await data.json();
+
+		const response: EmbedPayload = {
+			author: { name: quote[0].a }, // Author
+			title: quote[0].q, // Quote
+			provider: { name: 'Zen Quotes API', url: 'https://zenquotes.io' },
+			color: 0x009473,
+			type: 'article',
+		};
+
+		i.respond({ embeds: [response] });
 	}
 
 	@slash('calculate')
@@ -53,11 +78,11 @@ class RemiBot extends Client {
 			color: 0xFFCC00,
 		};
 
-		i.respond({ embeds: [response] });
+		i.respond({ embeds: [response], ephemeral: true });
 	}
 
 	@slash('trigonometry')
-	calculate_trig(i: SlashCommandInteraction) {
+	calculateTrig(i: SlashCommandInteraction) {
 		const type = i.data.options.find((e) => e.name == 'type')!.value;
 		const rad = i.data.options.find((e) => e.name == 'radian')!.value;
 
@@ -68,7 +93,7 @@ class RemiBot extends Client {
 			description: `Calculate ${type}(${rad})`,
 		};
 
-		i.respond({ embeds: [response] });
+		i.respond({ embeds: [response], ephemeral: true });
 	}
 }
 

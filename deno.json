@@ -4,7 +4,7 @@
 			"typescript"
 		],
 		"indentWidth": 4,
-		"lineWidth": 100,
+		"lineWidth": 80,
 		"semiColons": true,
 		"singleQuote": true,
 		"useTabs": true

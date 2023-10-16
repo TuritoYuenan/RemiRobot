@@ -21,7 +21,11 @@ function divide(num1: number, num2: number): CalcResult {
 	}
 }
 
-export function arithmetic(number1: number, number2: number, operator: Operators): CalcResult {
+export function arithmetic(
+	number1: number,
+	number2: number,
+	operator: Operators,
+): CalcResult {
 	switch (operator) {
 		case Operators.Plus:
 			return number1 + number2;
