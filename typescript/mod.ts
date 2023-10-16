@@ -15,6 +15,10 @@ import 'dotenv';
 const token: string = Deno.env.get('TOKEN') || '';
 const srvID: string = Deno.env.get('SERVER') || '';
 
+function option(i: SlashCommandInteraction, id: string) {
+	return i.data.options.find((e) => e.name == id)!.value;
+}
+
 class RemiBot extends Client {
 	@event('ready')
 	bootstrap() {
@@ -41,9 +45,8 @@ class RemiBot extends Client {
 
 	@slash('spell')
 	spell(i: SlashCommandInteraction) {
-		const input = i.data.options.find((e) => e.name == 'input');
-		const word: string = input!.value;
-		const spelt = word.split('').toString();
+		const input = option(i, 'data');
+		const spelt = input.split('').toString();
 
 		i.respond({ content: spelt });
 	}
@@ -66,9 +69,9 @@ class RemiBot extends Client {
 
 	@slash('calculate')
 	calculate(i: SlashCommandInteraction) {
-		const num1 = i.data.options.find((e) => e.name == 'num1')!.value;
-		const num2 = i.data.options.find((e) => e.name == 'num2')!.value;
-		const oprd = i.data.options.find((e) => e.name == 'operator')!.value;
+		const num1 = option(i, 'num1');
+		const num2 = option(i, 'num2');
+		const oprd = option(i, 'operator');
 
 		const result = arithmetic(num1, num2, oprd);
 
@@ -83,8 +86,8 @@ class RemiBot extends Client {
 
 	@slash('trigonometry')
 	calculateTrig(i: SlashCommandInteraction) {
-		const type = i.data.options.find((e) => e.name == 'type')!.value;
-		const rad = i.data.options.find((e) => e.name == 'radian')!.value;
+		const type = option(i, 'type');
+		const rad = option(i, 'radian');
 
 		const result = trigonometry(type, rad);
 
