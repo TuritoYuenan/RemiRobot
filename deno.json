@@ -19,7 +19,7 @@
 	},
 	"test": {
 		"include": [
-			"typescript/test.ts"
+			"typescript/maths.test.ts"
 		]
 	}
 }

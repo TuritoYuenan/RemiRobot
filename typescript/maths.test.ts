@@ -1,13 +1,13 @@
 import { assertEquals } from 'assert';
 import { Operators, arithmetic } from './maths.ts';
 
-Deno.test("Calculating exam", () => {
+Deno.test("Calculation test", () => {
 	assertEquals(arithmetic(3, 478, Operators.Plus), 481);
 	assertEquals(arithmetic(20, 46, Operators.Minus), -26);
 	assertEquals(arithmetic(27, 478, Operators.Multiply), 12_906)
 })
 
-Deno.test("Division exam", () => {
+Deno.test("Division test", () => {
 	assertEquals(arithmetic(20, 4, Operators.Divide), 5);
 	assertEquals(arithmetic(150, 2, Operators.Divide), 75);
 	assertEquals(arithmetic(2048, 512, Operators.Divide), 4);
