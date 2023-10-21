@@ -15,15 +15,15 @@ function option(i: SlashCommandInteraction, id: string) {
 	return i.data.options.find((e) => e.name == id)!.value;
 }
 
-class RemiBot extends Client {
+class AZULI extends Client {
 	@event('ready')
 	bootstrap() {
 		for (const command of commands) {
 			this.interactions.commands.create(command, srvID)
-				.then((cmd) => console.log(`🟩 Command /${cmd.name} ONLINE`))
-				.catch((cmd) => console.log(`🔴 Command /${cmd.name} FAILED`));
+				.then((cmd) => console.log(`🟩 /${cmd.name} ONLINE`))
+				.catch((cmd) => console.log(`🔴 /${cmd.name} FAILED`));
 		}
-		console.log(`RemiBot ONLINE: https://discord.com/channels/${srvID}`);
+		console.log(`AZULI is Online: https://discord.com/channels/${srvID}`);
 	}
 
 	@slash('ping')
@@ -41,7 +41,7 @@ class RemiBot extends Client {
 
 	@slash('spell')
 	spell(i: SlashCommandInteraction) {
-		const input = option(i, 'data');
+		const input: string = option(i, 'input');
 		const spelt = input.split('').toString();
 
 		i.respond({ content: spelt });
@@ -96,5 +96,5 @@ class RemiBot extends Client {
 	}
 }
 
-const bot = new RemiBot();
+const bot = new AZULI();
 bot.connect(token, Intents.None);

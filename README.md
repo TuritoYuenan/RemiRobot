@@ -1,4 +1,13 @@
-# Remilia the Robot
+# AZULI the Robot
+
+AZULI (formerly Remilia) is a robot assistant and robot daughter of Turito Yuenan. AZULI currently exists as a Discord bot, with plans to expand and evolve in the future.
+
+## Naming
+
+- The name AZULI was conceived on 21 Oct 2023 to replace the old name Remilia.
+- Remilia originated from the concept of a Re:Zero OC, the fusion of Rem and Emilia.
+- The new name AZULI (robot-style capitalised) comes from Spanish **azul** (blue) to reflect the robot's blue nature.
+- "AZULI robot" is also a backronym for a made-up phrase: Asynchronous Zen Uncommercial Library-supported Integrated robot.
 
 ## Current Version
 

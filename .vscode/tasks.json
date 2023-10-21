@@ -13,7 +13,7 @@
 				"$deno"
 			],
 			"label": "deno task: dev",
-			"detail": "deno run -A ./typescript/mod.ts"
+			"detail": "deno run -A ${file}"
 		}
 	]
 }

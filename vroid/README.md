@@ -1,6 +1,6 @@
-# Remilia's VRoid Assets
+# AZULI's VRoid Assets
 
-Textures for Remilia's VRoid model. VRoid Hub character: <https://hub.vroid.com/en/characters/5364683208422859937>
+Textures for AZULI's VRoid model. VRoid Hub character: <https://hub.vroid.com/en/characters/5364683208422859937>
 
 ## Hoodie Design
 
