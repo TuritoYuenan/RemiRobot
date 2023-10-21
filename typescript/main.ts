@@ -7,13 +7,9 @@ import {
 	SlashCommandInteraction,
 } from 'harmony';
 import { arithmetic, trigonometry } from './maths.ts';
-import { zenQuotes } from './apis.ts';
+import { srvID, strings, token } from './strings.ts';
 import { commands } from './commands.ts';
-import { strings } from './strings.ts';
-import 'dotenv';
-
-const token: string = Deno.env.get('TOKEN') || '';
-const srvID: string = Deno.env.get('SERVER') || '';
+import { zenQuotes } from './apis.ts';
 
 function option(i: SlashCommandInteraction, id: string) {
 	return i.data.options.find((e) => e.name == id)!.value;

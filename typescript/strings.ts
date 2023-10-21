@@ -1,3 +1,8 @@
+import 'dotenv';
+
+export const token: string = Deno.env.get('TOKEN') || 'NOT FOUND';
+export const srvID: string = Deno.env.get('SERVER') || 'NOT FOUND';
+
 export const strings = {
 	article18: {
 		title: `Universal Declaration of Human Rights, Article 18`,

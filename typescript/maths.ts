@@ -14,11 +14,8 @@ export enum TrigTypes {
 }
 
 function divide(num1: number, num2: number): CalcResult {
-	if (num2 === 0) {
-		return '[Indivisible by 0]';
-	} else {
-		return num1 / num2;
-	}
+	if (num2 === 0) return '[Indivisible by 0]';
+	return num1 / num2;
 }
 
 export function arithmetic(
