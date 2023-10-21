@@ -9,7 +9,7 @@ import {
 import { arithmetic, trigonometry } from './maths.ts';
 import { srvID, strings, token } from './strings.ts';
 import { commands } from './commands.ts';
-import { zenQuotes } from './apis.ts';
+import { getQuote } from './apis.ts';
 
 function option(i: SlashCommandInteraction, id: string) {
 	return i.data.options.find((e) => e.name == id)!.value;
@@ -49,12 +49,11 @@ class AZULI extends Client {
 
 	@slash('quote')
 	async quote(i: SlashCommandInteraction) {
-		const data = await fetch(zenQuotes);
-		const quote = await data.json();
+		const { a, q } = await getQuote();
 
 		const response: EmbedPayload = {
-			author: { name: quote[0].a }, // Author
-			title: quote[0].q, // Quote
+			author: { name: a },
+			title: q,
 			provider: { name: 'Zen Quotes API', url: 'https://zenquotes.io' },
 			color: 0x009473,
 			type: 'article',
