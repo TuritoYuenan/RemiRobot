@@ -1,5 +1,5 @@
 import { SlashCommandPartial } from 'harmony';
-import { Operators, TrigTypes } from './maths.ts';
+import { Operators, TrigFuncs } from './maths.ts';
 
 export const commands: SlashCommandPartial[] = [{
 	name: 'ping',
@@ -50,9 +50,9 @@ export const commands: SlashCommandPartial[] = [{
 		type: 'STRING',
 		required: true,
 		choices: [
-			{ name: '[sin()] Sine', value: TrigTypes.Sine },
-			{ name: '[cos()] Cosine', value: TrigTypes.Cosine },
-			{ name: '[tan()] Tangent', value: TrigTypes.Tangent },
+			{ name: '[sin()] Sine', value: TrigFuncs.Sine },
+			{ name: '[cos()] Cosine', value: TrigFuncs.Cosine },
+			{ name: '[tan()] Tangent', value: TrigFuncs.Tangent },
 		],
 	}, {
 		name: 'radian',

@@ -9,7 +9,7 @@ export interface Quote {
 
 /**
  * Get a randomised quote from ZenQuotes.io
- * @implements Must be used with await
+ * @access Must be used with await
  */
 export async function getQuote(): Promise<Quote> {
 	const response = await fetch('https://zenquotes.io/api/random');
