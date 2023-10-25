@@ -15,11 +15,11 @@
 		"harmony": "https://deno.land/x/harmony@v2.9.0/mod.ts"
 	},
 	"tasks": {
-		"dev": "deno run -A ./typescript/main.ts"
+		"dev": "deno run -A ./discord-bot/typescript/main.ts"
 	},
 	"test": {
 		"include": [
-			"typescript/maths.test.ts"
+			"discord-bot/typescript/maths.test.ts"
 		]
 	}
 }
