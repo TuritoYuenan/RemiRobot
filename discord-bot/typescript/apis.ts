@@ -1,10 +1,10 @@
 export interface Quote {
 	/** Quote */
-	q: string
+	q: string;
 	/** Author */
-	a: string
+	a: string;
 	/** HTML format */
-	h: string
+	h: string;
 }
 
 /**

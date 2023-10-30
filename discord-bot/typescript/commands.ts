@@ -6,7 +6,7 @@ export const commands: SlashCommandPartial[] = [{
 	description: 'Return Article 18 in the UDHR',
 }, {
 	name: 'quote',
-	description: 'Get a quote from ZenQuotes.io'
+	description: 'Get a quote from ZenQuotes.io',
 }, {
 	name: 'spell',
 	description: 'Spell out the inputed word',
