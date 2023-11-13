@@ -6,7 +6,7 @@ import {
 	slash,
 	SlashCommandInteraction,
 } from 'harmony';
-import { arithmetic, trigonometry } from './maths.ts';
+import { arithmetic, factorial, trigonometry } from './maths.ts';
 import { srvID, strings, token } from './strings.ts';
 import { commands } from './commands.ts';
 import { getQuote } from './apis.ts';
@@ -89,6 +89,21 @@ class AZULI extends Client {
 		const response: EmbedPayload = {
 			title: `The result is ${result}`,
 			description: `Calculate ${type}(${rad})`,
+		};
+
+		i.respond({ embeds: [response], ephemeral: true });
+	}
+
+	@slash('factorial')
+	factorial(i: SlashCommandInteraction) {
+		const input = option(i, 'number');
+
+		const result = factorial(input);
+
+		const response: EmbedPayload = {
+			title: `The result is ${result}`,
+			description: `Calculate factorial of ${input}`,
+			color: 0xFFCC00,
 		};
 
 		i.respond({ embeds: [response], ephemeral: true });

@@ -1,5 +1,5 @@
 import { assertEquals } from 'assert';
-import { arithmetic, Operators } from './maths.ts';
+import { arithmetic, factorial, Operators } from './maths.ts';
 
 Deno.test('Calculation test', () => {
 	assertEquals(arithmetic(3, 478, Operators.Plus), 481);
@@ -7,16 +7,21 @@ Deno.test('Calculation test', () => {
 	assertEquals(arithmetic(27, 478, Operators.Multiply), 12_906);
 });
 
-Deno.test('Division test', (test) => {
-	test.step('Casual division', () => {
+Deno.test('Division test', async (test) => {
+	await test.step('Casual division', () => {
 		assertEquals(arithmetic(20, 4, Operators.Divide), 5);
 	});
 
-	test.step('Rational division', () => {
+	await test.step('Rational division', () => {
 		assertEquals(arithmetic(16, 3, Operators.Divide), 5.333333333333333);
 	});
 
-	test.step('Divide by 0 Handling', () => {
-		assertEquals(arithmetic(5, 0, Operators.Divide), '[Indivisible by 0]');
+	await test.step('Handle Zero Division', () => {
+		assertEquals(arithmetic(5, 0, Operators.Divide), NaN);
 	});
+});
+
+Deno.test('Factorial test', () => {
+	assertEquals(factorial(5), 120);
+	assertEquals(factorial(9), 362880);
 });

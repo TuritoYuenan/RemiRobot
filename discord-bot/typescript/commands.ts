@@ -60,4 +60,13 @@ export const commands: SlashCommandPartial[] = [{
 		type: 'NUMBER',
 		required: true,
 	}],
+}, {
+	name: 'factorial',
+	description: 'Do factorial of a number',
+	options: [{
+		name: 'number',
+		description: 'Input number',
+		type: 'STRING',
+		required: true,
+	}],
 }];

@@ -1,5 +1,3 @@
-type CalcResult = number | '[Indivisible by 0]';
-
 export enum Operators {
 	Plus = '+',
 	Minus = '-',
@@ -14,28 +12,21 @@ export enum TrigFuncs {
 }
 
 /**
- * Division between two numbers
- * @param num1 First number
- * @param num2 Second number
- * @returns The division result
+ * Divide two numbers
  */
-function divide(num1: number, num2: number): CalcResult {
-	if (num2 === 0) return '[Indivisible by 0]';
+function divide(num1: number, num2: number): number {
+	if (num2 === 0) return NaN;
 	return num1 / num2;
 }
 
 /**
- * Do an arithmetic calculation
- * @param number1 First number
- * @param number2 Second number
- * @param operator Operator
- * @returns The calculation result
+ * Arithmetic calculation
  */
 export function arithmetic(
 	number1: number,
 	number2: number,
 	operator: Operators,
-): CalcResult {
+): number {
 	switch (operator) {
 		case Operators.Plus:
 			return number1 + number2;
@@ -49,10 +40,7 @@ export function arithmetic(
 }
 
 /**
- * Do a trigonometry function
- * @param func Trigonometry function
- * @param radian Input number in radian
- * @returns The calculation result
+ * Trigonometry calculation
  */
 export function trigonometry(func: TrigFuncs, radian: number): number {
 	switch (func) {
@@ -63,4 +51,12 @@ export function trigonometry(func: TrigFuncs, radian: number): number {
 		case TrigFuncs.Tangent:
 			return Math.tan(radian);
 	}
+}
+
+/**
+ * Factorial calculation
+ */
+export function factorial(input: number): number {
+	if (input == 1) return 1;
+	return input * factorial(input - 1);
 }
