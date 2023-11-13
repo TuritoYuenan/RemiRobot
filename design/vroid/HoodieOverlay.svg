@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg version="1.1" viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg version="1.1" viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg">
 	<defs>
-		<linearGradient id="a" x1="193" x2="609" y1="147" y2="147" gradientTransform="scale(.866 1.15)" gradientUnits="userSpaceOnUse">
-			<stop stop-color="#4682FA" offset="0"/>
-			<stop stop-color="#FA00FA" offset="1"/>
-		</linearGradient>
-		<linearGradient id="b" x1="193" x2="609" y1="147" y2="147" gradientTransform="scale(.866 1.15)" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
 		<linearGradient id="c" x1="30" x2="70" y1="30" y2="70" gradientTransform="translate(130,65)" gradientUnits="userSpaceOnUse">
-			<stop stop-color="#4682fa" offset="0"/>
-			<stop stop-color="#fa00fa" offset="1"/>
+			<stop stop-color="#1e66f5" offset="0"/>
+			<stop stop-color="#dd22ab" offset="1"/>
 		</linearGradient>
 	</defs>
 	<path d="m986 1170-52.5 30-15 37.5 15 52.5 90 75 90-75 15-52.5-15-37.5-52.5-30-37.5 30z" fill="#fff"/>
@@ -34,14 +29,14 @@
 		<rect transform="rotate(90)" x="120" y="-144" width="5" height="12" rx="2"/>
 	</g>
 	<g fill="#fff" font-family="'Iosevka SS04'" font-size="53.3px" font-weight="bold" text-anchor="end">
-		<text x="406.66656" y="1589.2" text-align="end" style="line-height:1" xml:space="preserve"><tspan x="406.66656" y="1589.2">REMILIA YUENAN</tspan></text>
-		<text x="2016.6665" y="1589.2" text-align="end" style="line-height:1" xml:space="preserve"><tspan x="2016.6665" y="1589.2">REMILIA YUENAN</tspan></text>
+		<text x="224.8" y="1589" text-align="end" style="line-height:1" xml:space="preserve"><tspan transform="translate(-182)" x="224.8" y="1589" text-align="center" text-anchor="middle">A.Z.U.L.I.</tspan></text>
+		<text x="1651" y="1589" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="1835" y="1589" text-align="center" text-anchor="middle">A.Z.U.L.I.</tspan></text>
 	</g>
 	<g transform="matrix(4.8 0 0 4.8 -2673 -3778)">
 		<rect x="553" y="1016" width="100" height="100" fill="none"/>
-		<polygon transform="translate(553 1016)" points="50 10 47 18 53 18" fill="url(#a)"/>
-		<polygon transform="translate(553 1016)" points="31 63 28 57 72 57 69 63" fill="#fa00fa"/>
-		<polygon transform="translate(553 1016)" points="21 43 18 37 82 37 79 43" fill="#4682fa"/>
+		<polygon transform="translate(553 1016)" points="50 10 47 18 53 18" fill="#8839ef"/>
+		<polygon transform="translate(553 1016)" points="31 63 28 57 72 57 69 63" fill="#ea76cb"/>
+		<polygon transform="translate(553 1016)" points="21 43 18 37 82 37 79 43" fill="#1e66f5"/>
 		<polygon transform="translate(553 1016)" points="26 53 23 47 77 47 74 53" fill="#fff"/>
 		<g transform="translate(553 1016)" fill="#fff" fill-rule="evenodd">
 			<polygon points="44 36 56 36 53 20 47 20"/>
@@ -63,9 +58,9 @@
 	</g>
 	<g transform="matrix(4.8 0 0 4.8 -1063 -3778)">
 		<rect x="553" y="1016" width="100" height="100" fill="none"/>
-		<polygon transform="translate(553 1016)" points="47 18 53 18 50 10" fill="url(#b)"/>
-		<polygon transform="translate(553 1016)" points="28 57 72 57 69 63 31 63" fill="#fa00fa"/>
-		<polygon transform="translate(553 1016)" points="18 37 82 37 79 43 21 43" fill="#4682fa"/>
+		<polygon transform="translate(553 1016)" points="47 18 53 18 50 10" fill="#8839ef"/>
+		<polygon transform="translate(553 1016)" points="28 57 72 57 69 63 31 63" fill="#ea76cb"/>
+		<polygon transform="translate(553 1016)" points="18 37 82 37 79 43 21 43" fill="#1e66f5"/>
 		<polygon transform="translate(553 1016)" points="23 47 77 47 74 53 26 53" fill="#fff"/>
 		<g transform="translate(553 1016)" fill="#fff" fill-rule="evenodd">
 			<polygon points="56 36 53 20 47 20 44 36"/>
