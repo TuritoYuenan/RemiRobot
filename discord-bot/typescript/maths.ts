@@ -12,14 +12,6 @@ export enum TrigFuncs {
 }
 
 /**
- * Divide two numbers
- */
-function divide(num1: number, num2: number): number {
-	if (num2 === 0) return NaN;
-	return num1 / num2;
-}
-
-/**
  * Arithmetic calculation
  */
 export function arithmetic(
@@ -35,7 +27,8 @@ export function arithmetic(
 		case Operators.Multiply:
 			return number1 * number2;
 		case Operators.Divide:
-			return divide(number1, number2);
+			if (number2 === 0) return NaN;
+			return number1 / number2;
 	}
 }
 
