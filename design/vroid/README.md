@@ -11,10 +11,11 @@ Textures for AZULI's VRoid model. VRoid Hub character: <https://hub.vroid.com/en
 
 - [Bottom](./SwimsuitBottom.svg)
 - [Top](./SwimsuitTop.svg)
-- [Top, old version](./SwimsuitTop.old.svg)
+- [Top (legacy)](./SwimsuitTop.old.svg)
 
 ## Underwear Design
 
 - [Top](./UndiesTop.svg)
 - [Bottom](./UndiesBottom.svg)
 - [Socks](./Socks.svg)
+- [Gloves](./Gloves.svg)
