@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg version="1.1" viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg"
-	xmlns:xlink="http://www.w3.org/1999/xlink">
-	<path d="m0 1e3v60h490v-60h-490zm1558 0v60h490v-60h-490z" fill="#222" />
-	<path d="m490 948v292h28l87-60h275l128 114s16 23.3 32 0l128-114h275l87 60h28v-292h-710z" fill="#222" />
-	<image transform="rotate(-10)" x="362" y="1069" width="100" height="100" preserveAspectRatio="none"
-		xlink:href="../imgs/icon.svg" />
-</svg>

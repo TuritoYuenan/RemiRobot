@@ -14,12 +14,15 @@
 		"dotenv": "https://deno.land/std@0.203.0/dotenv/load.ts",
 		"harmony": "https://deno.land/x/harmony@v2.9.0/mod.ts"
 	},
+	"compilerOptions": {
+		"experimentalDecorators": true
+	},
 	"tasks": {
-		"dev": "deno run -A ./discord-bot/typescript/main.ts"
+		"dev": "deno run -A ./src/typescript/main.ts"
 	},
 	"test": {
 		"include": [
-			"discord-bot/typescript/maths.test.ts"
+			"src/typescript/maths.test.ts"
 		]
 	}
 }
