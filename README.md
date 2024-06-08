@@ -1,3 +1,5 @@
+![Project Banner](.github/AZULI%20Robot.png)
+
 # AZULI the Robot
 
 AZULI (formerly Remilia) is a robot assistant and robot daughter of Turito Yuenan. AZULI currently exists as a Discord bot, with plans to expand and evolve in the future.
