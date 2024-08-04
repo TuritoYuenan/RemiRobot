@@ -1,6 +1,5 @@
 import {
 	Client,
-	EmbedPayload,
 	event,
 	Intents,
 	slash,
@@ -9,39 +8,39 @@ import {
 import { arithmetic, factorial, trigonometry } from './maths.ts';
 import { srvID, strings, token } from './strings.ts';
 import { commands } from './commands.ts';
-import { getQuote } from './apis.ts';
+import { getQuote } from './quote.ts';
 
-function option(i: SlashCommandInteraction, id: string) {
-	return i.data.options.find((e) => e.name == id)!.value;
+function getCmdOption(interaction: SlashCommandInteraction, optionId: string) {
+	return interaction.data.options.find((option) => option.name == optionId)!.value;
 }
 
 class AZULI extends Client {
 	@event('ready')
 	bootstrap() {
-		for (const command of commands) {
+		commands.forEach((command) => {
 			this.interactions.commands.create(command, srvID)
 				.then((cmd) => console.log(`🟩 /${cmd.name} ONLINE`))
 				.catch((cmd) => console.log(`🔴 /${cmd.name} FAILED`));
-		}
+		});
 		console.log(`AZULI is Online: https://discord.com/channels/${srvID}`);
 	}
 
 	@slash('ping')
 	ping(i: SlashCommandInteraction) {
-		const response: EmbedPayload = {
-			author: { name: 'United Nations' },
-			title: strings.article18.title,
-			description: strings.article18.text,
-			color: 0x009EDB,
-			type: 'article',
-		};
-
-		i.respond({ embeds: [response] });
+		i.respond({
+			embeds: [{
+				author: { name: 'United Nations' },
+				title: strings.article18.title,
+				description: strings.article18.text,
+				color: 0x009EDB,
+				type: 'article',
+			}]
+		});
 	}
 
 	@slash('spell')
 	spell(i: SlashCommandInteraction) {
-		const input: string = option(i, 'input');
+		const input: string = getCmdOption(i, 'input');
 		const spelt = input.split('').toString();
 
 		i.respond({ content: spelt });
@@ -49,66 +48,65 @@ class AZULI extends Client {
 
 	@slash('quote')
 	async quote(i: SlashCommandInteraction) {
-		const { a, q } = await getQuote();
+		const { author, text } = await getQuote();
 
-		const response: EmbedPayload = {
-			author: { name: a },
-			title: q,
-			provider: { name: 'Zen Quotes API', url: 'https://zenquotes.io' },
-			color: 0x009473,
-			type: 'article',
-		};
-
-		i.respond({ embeds: [response] });
+		i.respond({
+			embeds: [{
+				author: { name: author },
+				title: text,
+				provider: { name: 'Zen Quotes API', url: 'https://zenquotes.io' },
+				color: 0x009473,
+				type: 'article',
+			}]
+		});
 	}
 
 	@slash('calculate')
 	calculate(i: SlashCommandInteraction) {
-		const num1 = option(i, 'num1');
-		const num2 = option(i, 'num2');
-		const oprd = option(i, 'operator');
+		const num1 = getCmdOption(i, 'num1');
+		const num2 = getCmdOption(i, 'num2');
+		const oprd = getCmdOption(i, 'operator');
 
 		const result = arithmetic(num1, num2, oprd);
 
-		const response: EmbedPayload = {
-			title: `The result is ${result}`,
-			description: `Calculate ${num1} ${oprd} ${num2}`,
-			color: 0xFFCC00,
-		};
-
-		i.respond({ embeds: [response], ephemeral: true });
+		i.respond({
+			embeds: [{
+				title: `The result is ${result}`,
+				description: `Calculate ${num1} ${oprd} ${num2}`,
+				color: 0xFFCC00,
+			}], ephemeral: true
+		});
 	}
 
 	@slash('trigonometry')
 	calculateTrig(i: SlashCommandInteraction) {
-		const type = option(i, 'type');
-		const rad = option(i, 'radian');
+		const type = getCmdOption(i, 'type');
+		const rad = getCmdOption(i, 'radian');
 
 		const result = trigonometry(type, rad);
 
-		const response: EmbedPayload = {
-			title: `The result is ${result}`,
-			description: `Calculate ${type}(${rad})`,
-		};
-
-		i.respond({ embeds: [response], ephemeral: true });
+		i.respond({
+			embeds: [{
+				title: `The result is ${result}`,
+				description: `Calculate ${type}(${rad})`,
+			}], ephemeral: true
+		});
 	}
 
 	@slash('factorial')
 	factorial(i: SlashCommandInteraction) {
-		const input = option(i, 'number');
+		const input = getCmdOption(i, 'number');
 
 		const result = factorial(input);
 
-		const response: EmbedPayload = {
-			title: `The result is ${result}`,
-			description: `Calculate factorial of ${input}`,
-			color: 0xFFCC00,
-		};
-
-		i.respond({ embeds: [response], ephemeral: true });
+		i.respond({
+			embeds: [{
+				title: `The result is ${result}`,
+				description: `Calculate factorial of ${input}`,
+				color: 0xFFCC00,
+			}], ephemeral: true
+		});
 	}
 }
 
-const bot = new AZULI();
-bot.connect(token, Intents.None);
+new AZULI().connect(token, Intents.None);
