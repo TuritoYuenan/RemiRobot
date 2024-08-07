@@ -18,11 +18,11 @@
 		"experimentalDecorators": true
 	},
 	"tasks": {
-		"dev": "deno run -A ./src/typescript/main.ts"
+		"dev": "deno run -A ./typescript/main.ts"
 	},
 	"test": {
 		"include": [
-			"src/typescript/maths.test.ts"
+			"typescript/maths.test.ts"
 		]
 	}
 }
