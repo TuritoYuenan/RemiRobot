@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Build and push Docker images
 
 on:
   push:
@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag azuli-robot:$(date +%s)
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v6.5.0
