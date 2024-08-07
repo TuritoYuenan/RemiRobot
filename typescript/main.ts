@@ -11,7 +11,8 @@ import { commands } from './commands.ts';
 import { getQuote } from './quote.ts';
 
 function getCmdOption(interaction: SlashCommandInteraction, optionId: string) {
-	return interaction.data.options.find((option) => option.name == optionId)!.value;
+	return interaction.data.options.find((option) => option.name == optionId)!
+		.value;
 }
 
 class AZULI extends Client {
@@ -34,7 +35,7 @@ class AZULI extends Client {
 				description: strings.article18.text,
 				color: 0x009EDB,
 				type: 'article',
-			}]
+			}],
 		});
 	}
 
@@ -54,10 +55,13 @@ class AZULI extends Client {
 			embeds: [{
 				author: { name: author },
 				title: text,
-				provider: { name: 'Zen Quotes API', url: 'https://zenquotes.io' },
+				provider: {
+					name: 'Zen Quotes API',
+					url: 'https://zenquotes.io',
+				},
 				color: 0x009473,
 				type: 'article',
-			}]
+			}],
 		});
 	}
 
@@ -74,7 +78,8 @@ class AZULI extends Client {
 				title: `The result is ${result}`,
 				description: `Calculate ${num1} ${oprd} ${num2}`,
 				color: 0xFFCC00,
-			}], ephemeral: true
+			}],
+			ephemeral: true,
 		});
 	}
 
@@ -89,7 +94,8 @@ class AZULI extends Client {
 			embeds: [{
 				title: `The result is ${result}`,
 				description: `Calculate ${type}(${rad})`,
-			}], ephemeral: true
+			}],
+			ephemeral: true,
 		});
 	}
 
@@ -104,7 +110,8 @@ class AZULI extends Client {
 				title: `The result is ${result}`,
 				description: `Calculate factorial of ${input}`,
 				color: 0xFFCC00,
-			}], ephemeral: true
+			}],
+			ephemeral: true,
 		});
 	}
 }
