@@ -1,8 +1,5 @@
 {
 	"fmt": {
-		"include": [
-			"typescript"
-		],
 		"indentWidth": 4,
 		"lineWidth": 80,
 		"semiColons": true,
@@ -15,11 +12,11 @@
 		"harmony": "https://deno.land/x/harmony@v2.9.1/mod.ts"
 	},
 	"tasks": {
-		"dev": "deno run -A ./typescript/main.ts"
+		"dev": "deno run -A ./main.ts"
 	},
 	"test": {
 		"include": [
-			"typescript/maths.test.ts"
+			"maths.test.ts"
 		]
 	}
 }

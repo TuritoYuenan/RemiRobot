@@ -13,17 +13,9 @@ AZULI (formerly Remilia) is a robot assistant and robot daughter of Turito Yuena
   - The new name AZULI with robot-style capitalisation comes from Spanish **azul** (blue) to reflect the robot's blue design.
 - "AZULI robot" is also a backronym: Asynchronous Zen Uncommercial Library-supported Integrated robot.
 
-### Icons
-
-[Icon assets](./design/icons/)
-
-### VRoid Model
-
-[VRoid Studio assets](./design/vroid/)
-
 ## Discord bot
 
-### Typescript version (active)
+### Typescript version (discontinued)
 
 | Command       | Description                                         |
 | ------------- | --------------------------------------------------- |
@@ -35,7 +27,7 @@ AZULI (formerly Remilia) is a robot assistant and robot daughter of Turito Yuena
 
 ![Typescript Stack](https://github-readme-tech-stack.vercel.app/api/cards?title=Tech+Stack&borderRadius=6&fontSize=24&showBorder=false&lineCount=1&width=600&line1=typescript%2Ctypescript%2C0083ff%3Bdeno%2Cdeno%2Cffffff%3Bdeno%2Charmonyland%2C5865F2%3B)
 
-### Python version (legacy)
+### Python version (discontinued)
 
 | Command      | Description                                 |
 | ------------ | ------------------------------------------- |

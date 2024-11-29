@@ -21,6 +21,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ./discord-bot-deno
+
     steps:
       - name: Setup repo
         uses: actions/checkout@v4.1.7
