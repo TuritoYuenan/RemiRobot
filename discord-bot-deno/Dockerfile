@@ -10,7 +10,7 @@ WORKDIR /app
 COPY . .
 
 # Compile the main app so that it doesn't need to be compiled each startup/entry.
-RUN deno cache typescript/main.ts
+RUN deno cache ./main.ts
 
 # Run Discord bot
-CMD ["run", "--allow-all", "typescript/main.ts"]
+CMD ["run", "--allow-all", "./main.ts"]
